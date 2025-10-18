@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment Organizer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      width: 360px;
+      transition: all 0.4s ease;
+      overflow-y: auto;
+      max-height: 90vh;
+    }
+
+    h1, h2 {
+      margin-bottom: 20px;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      background: #fff;
+      color: #3f2b96;
+      border: none;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #3f2b96;
+      color: white;
+    }
+
+    .back-btn {
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+    }
+
+    .back-btn:hover {
+      background: white;
+      color: #3f2b96;
+    }
+
+    ul {
+      text-align: left;
+      list-style-type: decimal;
+      margin-top: 10px;
+    }
+
+    ul li {
+      margin: 5px 0;
+      padding-left: 5px;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #ffd700;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="main-container">
+    <!-- SUBJECT SELECTION -->
+    <div id="subject-page">
+      <h1>Select Subject</h1>
+      <button class="btn" onclick="showPage('chemistry-page')">Chemistry</button>
+      <button class="btn" onclick="showPage('computer-page')">Computer</button>
+    </div>
+
+    <!-- CHEMISTRY PAGE -->
+    <div id="chemistry-page" style="display:none;">
+      <h1>Chemistry</h1>
+      <button class="btn" onclick="showPage('bihan-page')">Bihan Sir</button>
+      <button class="btn" onclick="showPage('pbt-page')">PBT Ma’am</button>
+      <button class="btn back-btn" onclick="showPage('subject-page')">⬅ Back</button>
+    </div>
+
+    <!-- BIHAN SIR PAGE -->
+    <div id="bihan-page" style="display:none;">
+      <h2>Bihan Sir - Assignments</h2>
+      <ul id="bihan-list">
+        <!-- Add Bihan Sir’s assignments later -->
+      </ul>
+      <button class="btn back-btn" onclick="showPage('chemistry-page')">⬅ Back</button>
+    </div>
+
+    <!-- PBT MA'AM PAGE -->
+    <div id="pbt-page" style="display:none;">
+      <h2>PBT Ma’am</h2>
+      <button class="btn" onclick="showPage('vacation-page')">Vacation Homework</button>
+      <button class="btn back-btn" onclick="showPage('chemistry-page')">⬅ Back</button>
+    </div>
+
+    <!-- VACATION HOMEWORK PAGE (UNDER PBT MA’AM) -->
+    <div id="vacation-page" style="display:none;">
+      <h2>Vacation Homework - PBT Ma’am</h2>
+      <ul>
+        <li><a href="https://drive.google.com/file/d/12DhBCYrtJn6W7M7dDwJC6-FnxUbdXf9L/view" target="_blank">09 CHEMISTRY OF NON-METALS</a></li>
+        <li><a href="https://drive.google.com/file/d/1GfsvuYK4bRxhZPtHJ1wpEAwX9ljA9g3v/view" target="_blank">9.2 Oxygen and its Allotropes</a></li>
+        <li><a href="https://drive.google.com/file/d/1IKEECUz0OCoNmKbRKAAMjlbvFLa_YOa5/view" target="_blank">9.4 Nitrogen</a></li>
+        <li><a href="https://drive.google.com/file/d/1VgkBp6Yd3vSSDpaHSfI1mrO_Gx9V5WCx/view" target="_blank">9.5 Halogens</a></li>
+        <li><a href="https://drive.google.com/file/d/126MJV_Nle_Iz-4VCVKFn4SMCJmiAho0w/view" target="_blank">9.6 Carbon</a></li>
+        <li><a href="https://drive.google.com/file/d/1liIXvC15iNsjMeK4ryBZ9D92j4v_GGTX/view" target="_blank">9.7 Phosphorus</a></li>
+        <li><a href="https://drive.google.com/file/d/1IAVUw86mvmoFJWZDNyCVLV_H7ifRhtFS/view" target="_blank">9.8 Sulphur</a></li>
+        <li><a href="https://drive.google.com/file/d/1RkpqhpTu8VsZYr6K7MHY97jZ0IV02-bi/view" target="_blank">14 HYDROCARBONS</a></li>
+        <li><a href="https://drive.google.com/file/d/1oMAc6JrrWGTc56Ln1vNJqNcMT7FjWCEd/view" target="_blank">15 AROMATIC HYDROCARBONS</a></li>
+        <li><a href="https://drive.google.com/file/d/1mNB4oWflICWIogyQjRf5KrMlP0VKPv90/view" target="_blank">17 MODERN CHEMICAL MANUFACTURES</a></li>
+      </ul>
+      <button class="btn back-btn" onclick="showPage('pbt-page')">⬅ Back</button>
+    </div>
+
+    <!-- COMPUTER PAGE -->
+    <div id="computer-page" style="display:none;">
+      <h1>Computer</h1>
+      <ul id="computer-list">
+        <!-- Add Computer assignments later -->
+      </ul>
+      <button class="btn back-btn" onclick="showPage('subject-page')">⬅ Back</button>
+    </div>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('#main-container > div');
+      pages.forEach(page => page.style.display = 'none');
+      document.getElementById(pageId).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
